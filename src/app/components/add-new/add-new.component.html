@@ -1,0 +1,52 @@
+<div class="add-atm-container">
+  <h2 style="text-align: center;">Add New ATM</h2>
+  <form [formGroup]="atmForm" (ngSubmit)="onsubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" class="form-control" placeholder="Enter ATM Name" />
+      <div class="text-danger" *ngFor="let vl of validation_messages.name">
+        <div class="error-message"
+          *ngIf="atmForm.get('name')?.hasError(vl.type) && (atmForm.get('name')?.dirty || atmForm.get('name')?.touched)">
+          {{vl.message}}</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="manufacturer">Manufacturer</label>
+      <input id="manufacturer" formControlName="manufacturer" type="text" class="form-control"
+        placeholder="Enter Manufacturer Name" />
+        <div class="text-danger" *ngFor="let vl of validation_messages.manufacturer">
+          <div class="error-message"
+            *ngIf="atmForm.get('manufacturer')?.hasError(vl.type) && (atmForm.get('manufacturer')?.dirty || atmForm.get('manufacturer')?.touched)">
+            {{vl.message}}</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type</label>
+      <input id="type" formControlName="type" type="text" class="form-control" placeholder="Enter ATM Type" />
+      <div class="text-danger" *ngFor="let vl of validation_messages.type">
+        <div class="error-message"
+          *ngIf="atmForm.get('type')?.hasError(vl.type) && (atmForm.get('type')?.dirty || atmForm.get('type')?.touched)">
+          {{vl.message}}</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="serialNumber">Serial Number</label>
+      <input id="serialNumber" formControlName="serialNumber" type="text" class="form-control"
+        placeholder="Enter Serial Number" />
+        <div class="text-danger" *ngFor="let vl of validation_messages.serialNumber">
+          <div class="error-message"
+            *ngIf="atmForm.get('serialNumber')?.hasError(vl.type) && (atmForm.get('serialNumber')?.dirty || atmForm.get('serialNumber')?.touched)">
+            {{vl.message}}</div>
+        </div>
+    </div>
+
+    <div class="wrap-toolbar">
+      <button type="submit" class="btn">Save</button>
+      <button class="btn" routerLink="/">Cancel</button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,244 @@
+{
+  "atm": [
+    {
+      "id": 1,
+      "name": "ATM Central",
+      "manufacturer": "Diebold Nixdorf",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "DN123456789"
+    },
+    {
+      "id": 2,
+      "name": "ATM Westside",
+      "manufacturer": "NCR Corporation",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "NCR987654321"
+    },
+    {
+      "id": 3,
+      "name": "ATM Downtown",
+      "manufacturer": "Hyosung",
+      "type": "Deposit Machine",
+      "image": "",
+      "serialNumber": "HS456123789"
+    },
+    {
+      "id": 4,
+      "name": "ATM Uptown",
+      "manufacturer": "GRG Banking",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "GRG321654987"
+    },
+    {
+      "id": 5,
+      "name": "ATM North Plaza",
+      "manufacturer": "Diebold Nixdorf",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "DN987123654"
+    },
+    {
+      "id": 6,
+      "name": "ATM Eastside",
+      "manufacturer": "NCR Corporation",
+      "type": "Deposit Machine",
+      "image": "",
+      "serialNumber": "NCR123789456"
+    },
+    {
+      "id": 7,
+      "name": "ATM South Mall",
+      "manufacturer": "Hyosung",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "HS789456123"
+    },
+    {
+      "id": 8,
+      "name": "ATM Lakeside",
+      "manufacturer": "GRG Banking",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "GRG654987321"
+    },
+    {
+      "id": 9,
+      "name": "ATM Green Park",
+      "manufacturer": "Diebold Nixdorf",
+      "type": "Deposit Machine",
+      "image": "",
+      "serialNumber": "DN654321987"
+    },
+    {
+      "id": 10,
+      "name": "ATM City Center",
+      "manufacturer": "NCR Corporation",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "NCR456789123"
+    },
+    {
+      "id": 11,
+      "name": "ATM Harbor View",
+      "manufacturer": "Hyosung",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "HS001122334"
+    },
+    {
+      "id": 12,
+      "name": "ATM Mountain Side",
+      "manufacturer": "GRG Banking",
+      "type": "Deposit Machine",
+      "image": "",
+      "serialNumber": "GRG776655443"
+    },
+    {
+      "id": 13,
+      "name": "ATM Sun Plaza",
+      "manufacturer": "Diebold Nixdorf",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "DN445566778"
+    },
+    {
+      "id": 14,
+      "name": "ATM Riverfront",
+      "manufacturer": "NCR Corporation",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "NCR998877665"
+    },
+    {
+      "id": 15,
+      "name": "ATM Midtown",
+      "manufacturer": "Hyosung",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "HS112233445"
+    },
+    {
+      "id": 16,
+      "name": "ATM Park Avenue",
+      "manufacturer": "GRG Banking",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "GRG554433221"
+    },
+    {
+      "id": 17,
+      "name": "ATM West Park",
+      "manufacturer": "Diebold Nixdorf",
+      "type": "Deposit Machine",
+      "image": "",
+      "serialNumber": "DN998877442"
+    },
+    {
+      "id": 18,
+      "name": "ATM Skyline",
+      "manufacturer": "NCR Corporation",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "NCR665544332"
+    },
+    {
+      "id": 19,
+      "name": "ATM Seaside",
+      "manufacturer": "Hyosung",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "HS223344556"
+    },
+    {
+      "id": 20,
+      "name": "ATM Meadow Fields",
+      "manufacturer": "GRG Banking",
+      "type": "Deposit Machine",
+      "image": "",
+      "serialNumber": "GRG443322110"
+    },
+    {
+      "id": 21,
+      "name": "ATM City Gate",
+      "manufacturer": "Diebold Nixdorf",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "DN554433221"
+    },
+    {
+      "id": 22,
+      "name": "ATM East Mall",
+      "manufacturer": "NCR Corporation",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "NCR998877556"
+    },
+    {
+      "id": 23,
+      "name": "ATM Grand Square",
+      "manufacturer": "Hyosung",
+      "type": "Deposit Machine",
+      "image": "",
+      "serialNumber": "HS334455667"
+    },
+    {
+      "id": 24,
+      "name": "ATM Hilltop",
+      "manufacturer": "GRG Banking",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "GRG110022334"
+    },
+    {
+      "id": 25,
+      "name": "ATM Northern Star",
+      "manufacturer": "Diebold Nixdorf",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "DN667788990"
+    },
+    {
+      "id": 26,
+      "name": "ATM Lakeshore",
+      "manufacturer": "NCR Corporation",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "NCR223344556"
+    },
+    {
+      "id": 27,
+      "name": "ATM Central Plaza",
+      "manufacturer": "Hyosung",
+      "type": "Deposit Machine",
+      "image": "",
+      "serialNumber": "HS556677889"
+    },
+    {
+      "id": 28,
+      "name": "ATM Silver Bridge",
+      "manufacturer": "GRG Banking",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "GRG443221009"
+    },
+    {
+      "id": 29,
+      "name": "ATM Golden Park",
+      "manufacturer": "Diebold Nixdorf",
+      "type": "Cash Dispenser",
+      "image": "",
+      "serialNumber": "DN334455667"
+    },
+    {
+      "id": 30,
+      "name": "ATM Sunset View",
+      "manufacturer": "NCR Corporation",
+      "type": "Full Service",
+      "image": "",
+      "serialNumber": "NCR778899001"
+    }
+  ]
+}

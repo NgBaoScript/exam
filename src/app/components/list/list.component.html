@@ -1,0 +1,182 @@
+<div class="header">
+  <div class="wrap-header">
+    <div class="logo-container">
+      <img src="../assets/img/logo-company.png" alt="ATM Logo" class="logo">
+      <h1 class="company-name">ATM Management System</h1>
+    </div>
+    <div class="search-container">
+      <form [formGroup]="searchs">
+        <input formControlName="name" type="text" class="search-input" placeholder="Search ATM name...">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="main-content">
+  <div class="wrap-toolbar">
+    <button class="btn" routerLink="/add-new">Add New ATM</button>
+    <button class="btn" (click)="exportData()">Export Data</button>
+  </div>
+
+  <table id="table-data">
+    <thead>
+      <tr>
+        <th>ATM Name</th>
+        <th>Manufacturer</th>
+        <th>Type</th>
+        <th>Serial Number</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of paginatedAtmList">
+        <td>{{ item.name }}</td>
+        <td>{{ item.manufacturer }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.serialNumber }}</td>
+        <td>
+          <img [src]="item.image" alt="ATM Image" width="80" height="50" />
+        </td>
+        <td class="wrap-btn">
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#view" (click)="openModal(item.id)">View</button>
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#edit" (click)="openModal(item.id)">Edit</button>
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#delete"
+            (click)="openModal(item.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination-controls">
+    <button class="btn" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button class="btn" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+
+
+</div>
+
+
+<!-- Modal Edit -->
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="editLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editLabel">Edit</h1>
+      </div>
+      <form [formGroup]="atmForm" (ngSubmit)="updateAtm()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" type="text" class="form-control" placeholder="Enter ATM Name" />
+            <div class="text-danger" *ngFor="let vl of validation_messages.name">
+              <div class="error-message"
+                *ngIf="atmForm.get('name')?.hasError(vl.type) && (atmForm.get('name')?.dirty || atmForm.get('name')?.touched)">
+                {{vl.message}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="manufacturer">Manufacturer</label>
+            <input id="manufacturer" formControlName="manufacturer" type="text" class="form-control"
+              placeholder="Enter Manufacturer Name" />
+            <div class="text-danger" *ngFor="let vl of validation_messages.manufacturer">
+              <div class="error-message"
+                *ngIf="atmForm.get('manufacturer')?.hasError(vl.type) && (atmForm.get('manufacturer')?.dirty || atmForm.get('manufacturer')?.touched)">
+                {{vl.message}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="type">Type</label>
+            <input id="type" formControlName="type" type="text" class="form-control" placeholder="Enter ATM Type" />
+            <div class="text-danger" *ngFor="let vl of validation_messages.type">
+              <div class="error-message"
+                *ngIf="atmForm.get('type')?.hasError(vl.type) && (atmForm.get('type')?.dirty || atmForm.get('type')?.touched)">
+                {{vl.message}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="serialNumber">Serial Number</label>
+            <input id="serialNumber" formControlName="serialNumber" type="text" class="form-control"
+              placeholder="Enter Serial Number" />
+            <div class="text-danger" *ngFor="let vl of validation_messages.serialNumber">
+              <div class="error-message"
+                *ngIf="atmForm.get('serialNumber')?.hasError(vl.type) && (atmForm.get('serialNumber')?.dirty || atmForm.get('serialNumber')?.touched)">
+                {{vl.message}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal View -->
+<div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="viewLabel">View</h1>
+      </div>
+      <form [formGroup]="atmForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input readonly id="name" formControlName="name" type="text" class="form-control"
+              placeholder="Enter ATM Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="manufacturer">Manufacturer</label>
+            <input readonly id="manufacturer" formControlName="manufacturer" type="text" class="form-control"
+              placeholder="Enter Manufacturer Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="type">Type</label>
+            <input readonly id="type" formControlName="type" type="text" class="form-control"
+              placeholder="Enter ATM Type" />
+          </div>
+
+          <div class="form-group">
+            <label for="serialNumber">Serial Number</label>
+            <input readonly id="serialNumber" formControlName="serialNumber" type="text" class="form-control"
+              placeholder="Enter Serial Number" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="deleteLabel">Delete</h1>
+      </div>
+      <div class="modal-body">
+        Do you want to delete <strong>{{atmId}}</strong> ??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-dismiss="modal" (click)="deleteAtm()">Save</button>
+        <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>
